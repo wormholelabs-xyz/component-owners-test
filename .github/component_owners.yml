@@ -1,6 +1,0 @@
-# see https://github.com/dyladan/component-owners for more details
-components:
-  src/:
-    - evan-gray
-  src/non-write.md:
-    - panoel
