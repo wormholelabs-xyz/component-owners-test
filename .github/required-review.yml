@@ -1,0 +1,13 @@
+# see https://github.com/Automattic/action-required-review for more details
+- name: Read test
+  paths:
+    - "src/non-write.md"
+  teams:
+    - "@panoel"
+
+- name: Standard
+  paths:
+    - "src/**"
+  teams:
+    - "@evan-gray"
+    - "@tonyjin"
