@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: Automattic/action-required-review@93a995cac9308b74ef0c91c0d3ee8ded6bb9c2fe
+      - uses: evan-gray/action-required-review@b9211195785c8ccfdfe7bd66acc224861a54f082
         with:
           token: ${{ github.token }}
           requirements-file: .github/required-review.yml
