@@ -17,10 +17,6 @@ jobs:
     name: Checking required reviews
     runs-on: ubuntu-latest
 
-    # GitHub should provide a "pull_request_review_target", but they don't and
-    # the action will fail if run on a forked PR.
-    if: github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name
-
     steps:
       - uses: actions/checkout@v4
       - uses: Automattic/action-required-review@bc37113f38a3d10969c1a2a6eadbb53cb2360156
