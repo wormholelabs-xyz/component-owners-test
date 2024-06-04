@@ -19,9 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: Automattic/action-required-review@bc37113f38a3d10969c1a2a6eadbb53cb2360156
+      - uses: evan-gray/action-required-review@f81aba757ddfa9678a6ed2428e407bd5e53bccd2
         with:
           token: ${{ github.token }}
           requirements-file: .github/required-review.yml
           request-reviews: true
-          status: Required review
