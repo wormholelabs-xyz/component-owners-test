@@ -1,8 +1,11 @@
 name: "Required review check"
 on:
+  # pull_request_review will fire every time a review is submitted, edited,
+  # or dismissed. This will execute code from the merge branch.
   # pull_request_target is suggested for projects where pull requests will be
   # made from forked repositories. If pull_request is used in these cases,
   # the github token will not have sufficient permission to update the PR.
+  # This will execute code from the base branch.
   pull_request_review:
   pull_request_target:
     types: [opened, reopened, synchronize]
@@ -10,7 +13,6 @@ on:
 permissions:
   contents: read # to read changed files
   pull-requests: write # to read/write PR reviewers
-  statuses: write # to add the status pass/fail
 
 jobs:
   check:
@@ -19,9 +21,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: Automattic/action-required-review@bc37113f38a3d10969c1a2a6eadbb53cb2360156
+      - uses: evan-gray/action-required-review@de04615f48799311d161d399128368b4da5864e0
         with:
           token: ${{ github.token }}
           requirements-file: .github/required-review.yml
           request-reviews: true
-          status: Required review
+          status: ""
